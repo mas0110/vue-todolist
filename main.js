@@ -1,13 +1,33 @@
-const { createApp  } = Vue 
+const {
+        createApp 
+    } = Vue 
 
     createApp({
         data() {
             return {
-                // array di oggetti con contenuti del carosello
-
+                newTask:'',
+                tasks:[
+                    'farei compiti',
+                    'farei la spesa',
+                    'pulire casa',
+                ]
             }
         },
-        methods:{
+        created(){
 
+        },
+        methods:{
+            addTask(){
+
+                if(this.newTask !== ''){
+
+                    this.tasks.push(this.newTask)
+                }
+
+                this.newTask = ''
+            },
+            removetask(index){
+                this.tasks.splice(index, 1)
+            },
         },
     }).mount('#app')

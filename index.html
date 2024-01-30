@@ -26,32 +26,27 @@
         <main class="container">
             <div class="row">
                 <div class=" col-9">
-                    <input 
-                    type="text" class="form-control"
-                    placeholder="nuova task"
-                    aria-label="Username" name="task"
-                    id="task"
-                    v-model="newTask"
+                    <!-- MILESTONE 3 -->
+                    <!-- Predisporre un campo di input testuale e un pulsante "aggiungi": cliccando sul pulsante, il testo digitato viene letto e utilizzato per creare un nuovo todo, che quindi viene aggiunto alla lista dei todo esistenti. -->
+                    <input type="text" class="form-control" placeholder="nuova task" aria-label="Username" name="task"
+                    id="task" v-model="newTask"
                     @keyUp.enter="addTask"
                     >
                 </div>
                 <div class="col-3">
-                    <button 
-                    class=" btn bg-primary"
-                    @click="addTask"
-                    >Aggiungi</button>
+                    <button class=" btn bg-primary" @click="addTask">Aggiungi</button>
                 </div>
             </div>
             <div class="mt-5 bg-secondary bg-opacity-75 rounded">
                 <div class="p-3 text-light d-flex flex-column pb-2">
-                    <div 
-                    v-if="tasks.length !== 0"
-                    v-for="(element, index) in tasks"
-                    :key="index"
-                    class="d-flex justify-content-between border-bottom align-items-baseline">
+                    <div v-if="tasks.length !== 0" v-for="(element, index) in tasks" :key="index"
+                        class="d-flex justify-content-between border-bottom align-items-baseline">
                         <p class="mt-2">
                             {{ element }}
                         </p>
+
+                        <!-- MILESTONE 2 -->
+                        <!-- Visualizzare a fianco ad ogni item ha una "x": cliccando su di essa, il todo viene rimosso dalla lista. -->
                         <span>
                             <i @click="removetask" class="fa-solid fa-xmark"></i>
                         </span>
